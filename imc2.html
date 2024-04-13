@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+    <style>
+
+        body{
+            
+        }
+
+         .imc{
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            border-radius: 50px;
+            border: 4px solid black;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction:column;
+            align-items: center;
+            flex-wrap: wrap;
+            }
+
+            .classe{
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            border-radius: 50px;
+            border: 4px solid black;
+            margin-left: 550px;
+            margin-top: -505px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction:column;
+            text-align: left;
+            flex-wrap: wrap;
+
+    
+            }
+
+        li{
+            margin-left: 20px;
+            font-size: 20px;
+        }
+    
+        input, #calcular,#resultado{
+            width: 400px;
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border: 2px solid black;
+            cursor: pointer;
+
+        }
+
+        #resultado{
+            width: 400px;
+            height: 30px;
+            text-align: center;
+            font-size: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border: 2px solid black;
+  
+        }
+
+        h1{
+            width: 400px;
+            height: 50px;
+            text-align: center;
+            font-size: 40px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+       #texto{
+        font-size: 30px;
+       }
+
+        
+
+        
+    </style>
+
+
+
+    
+    <div class="imc">
+
+        
+
+        <h1>IMC</h1>
+    
+        <input type="number" placeholder="Digite sua altura" id="altura">
+        <input type="number" placeholder="Digite seu peso" id="peso">
+        
+        <button id="calcular" onclick="calculo()">Calcular</button>
+        
+       
+
+        <p id="resultado"></p>
+        <p id="texto"></p>
+        
+    </div>
+
+    <div class="classe">
+        <li>Abaixo de 18,5 - Abaixo do peso </li>
+        <li>Entre 18,6 e 24,9 - Peso ideal </li>
+        <li>Entre 25,0 e 29,9 - Levemente acima do peso </li>
+        <li>Entre 30,0 e 34,9 - Obesidade grau I </li>
+        <li>Entre 35,0 e 39,9 - Obesidade grau II (SEVERA) </li>
+        <li>Acima de 40 - Obesidade grau III (MÓRBIDA) </li>
+    </div>
+
+
+
+    <script>
+         function calculo(){
+    
+        var valor3 = document.getElementById('altura').value 
+        var valor4 = document.getElementById('peso').value 
+        var multiplicador = 10000
+        
+    
+        var calcular = (((valor4 / valor3) / valor3) * multiplicador)
+
+        document.getElementById('resultado').innerHTML = calcular
+
+        if(calcular >= 18.5){
+         document.getElementById('texto').innerText = "Peso ideal"
+
+            }else{
+         document.getElementById('texto').innerText = "Fora do ideal"
+            }
+
+
+        }    
+       
+        
+        
+           
+       
+    </script>
+
+
+</body>
+</html>
